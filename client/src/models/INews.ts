@@ -10,6 +10,7 @@ export interface INewsDiscipline {
 
 export interface INews {
   announce: string;
+  isBlog: boolean;
   characters: number;
   createdAt: string;
   game_slug: string;

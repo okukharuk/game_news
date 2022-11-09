@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: Helvetica;
+  }
+  @font-face {
+    font-family: Helvetica;
+    font-weight: 300;
+    src: url("../src/public/fonts/HelveticaLight.ttf");
+  }
+  @font-face {
+      font-family: Helvetica;
+      font-weight: 400;
+      src: url("../src/public/fonts/Helvetica.ttf");
+  }
+  @font-face {
+      font-family: Helvetica;
+      font-weight: 600;
+      src: url("../src/public/fonts/HelveticaBold.ttf");
+  }
+  @font-face {
+      font-family: Helvetica;
+      font-weight: 400;
+      font-style: italic;
+      src: url("../src/public/fonts/HelveticaItalic.ttf");
+  }
+  @font-face {
+      font-family: Helvetica;
+      font-weight: 600;
+      font-style: italic;
+      src: url("../src/public/fonts/HelveticaBoldItalic.ttf");
+  }
+}
+
 @layer utilities {
     /* Chrome, Safari and Opera */
     .no-scrollbar::-webkit-scrollbar {
@@ -28,10 +61,10 @@
     }
 }
 
-h3 {
+h2,h3 {
   font-weight: bolder;
   font-style: italic;
-  color: #7C8FA0;
+  color: #53678C;
   font-size: 1.25rem; 
   line-height: 1.75rem; 
   margin-top: 1rem;
@@ -41,4 +74,9 @@ h3 {
 ul {
   list-style-type: disc;
   list-style-position: inside;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
 }

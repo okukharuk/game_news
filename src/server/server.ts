@@ -23,13 +23,17 @@ export const startServer = () => {
           ) {
             let data = JSON.parse(responseBuffer.toString("utf8"));
 
-            data.article.contentArr = data.article.contentArr.map(
-              (text: any) => {
-                return parseText(text);
-              }
-            );
+            data.article
+              ? (data.article.contentArr = data.article.contentArr.map(
+                  (text: any) => {
+                    return parseText(text);
+                  }
+                ))
+              : null;
 
-            data.article.title = parseText(data.article.title);
+            data.article
+              ? (data.article.title = parseText(data.article.title))
+              : null;
 
             return JSON.stringify(data);
           }

@@ -16,7 +16,11 @@ const Matches: React.FC<MatchesProps> = ({ matches }) => {
       </div>
       <div className="flex flex-col p-3 main-gradient mb-4">
         <div className="flex flex-row text-white h-12 mb-2 items-center font-bold">
-          <img src={defaultURL + matches.event.logo} className="h-8 mr-4" />
+          <img
+            src={defaultURL + matches.event.logo}
+            className="h-8 mr-4"
+            alt="event logo"
+          />
           <div>{matches.event.title}</div>
         </div>
         {matches.list.map((match: IMatchesList) => (

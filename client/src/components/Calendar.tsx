@@ -49,7 +49,11 @@ const Calendar: React.FC<CalendarProps> = ({
           onChange={handleDateChange}
           open={calendarSelected}
         />
-        <img src={calendarSelected ? chevronUp : chevronDown} className="w-4" />
+        <img
+          src={calendarSelected ? chevronUp : chevronDown}
+          className="w-4 mr-4"
+          alt="chevron"
+        />
       </div>
     </div>
   );

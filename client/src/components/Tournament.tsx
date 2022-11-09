@@ -10,7 +10,7 @@ interface TournamentProps {
 const Tournament: React.FC<TournamentProps> = ({ tournament }) => {
   return (
     <div className="flex flex-row h-full text-white items-center justify-center font-bold cursor-pointer hover:main-url">
-      <img src={defaultURL + tournament.logo} className="h-8 mr-3" />
+      <img src={defaultURL + tournament.logo} className="h-8 mr-3" alt="" />
       <div>{tournament.title}</div>
     </div>
   );

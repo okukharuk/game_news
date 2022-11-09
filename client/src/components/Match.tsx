@@ -14,7 +14,11 @@ const Match: React.FC<MatchProps> = ({ match }) => {
         {new Date(match.start_date).toLocaleDateString().toString()}
       </div>
       <div className="flex flex-col m-auto items-center w-1/5">
-        <img className="w-12" src={defaultURL + match.home_team_logo} />
+        <img
+          className="w-12"
+          src={defaultURL + match.home_team_logo}
+          alt="home team logo"
+        />
         <div>{match.home_team_name}</div>
       </div>
       <div className="flex m-auto w-1/5 items-center justify-center">
@@ -23,7 +27,11 @@ const Match: React.FC<MatchProps> = ({ match }) => {
           .toString()}
       </div>
       <div className="flex flex-col m-auto items-center w-1/5">
-        <img className="w-12" src={defaultURL + match.away_team_logo} />
+        <img
+          className="w-12"
+          src={defaultURL + match.away_team_logo}
+          alt="away team logo"
+        />
         <div>{match.away_team_name}</div>
       </div>
       <div className="flex ml-auto w-1/5 justify-center items-center">

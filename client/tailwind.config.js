@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
     extend: {
+      fontFamily: {
+        'custom': ['Helvetica']
+      },
       colors: {
       'main-grey': {
         200: '#7C8FA0',

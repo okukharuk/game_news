@@ -11,7 +11,7 @@ const parseTag = (text: string): string => {
 export const parseText = (text: string, endIndex?: number): string => {
   return text.indexOf("<") !== -1
     ? endIndex
-      ? parseToUpperCase(text.slice(0, endIndex - 1)) +
+      ? parseToUpperCase(text.slice(0, endIndex)) +
         parseTag(text.slice(text.indexOf("<")))
       : parseTag(text)
     : parseToUpperCase(text);

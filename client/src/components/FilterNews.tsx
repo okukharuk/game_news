@@ -2,7 +2,7 @@ import React from 'react';
 import ReactSelect, { ActionMeta } from 'react-select';
 
 import { ISelect, SelectOptions } from '../consts/consts';
-import { useAppDispatch, useAppSelector } from '../hooks/redux';
+import { useAppDispatch } from '../hooks/redux';
 import { NewsSlice } from '../store/reducers/NewsSlice';
 import { PostsSlice } from '../store/reducers/PostsSlice';
 import Calendar from './Calendar';
@@ -11,7 +11,6 @@ const FilterNews = () => {
   const [startDate, setStartDate] = React.useState(new Date());
   const [endDate, setEndDate] = React.useState(new Date());
 
-  const [selectIsOpen, setSelectIsOpen] = React.useState(false);
   const [calendarStartSelected, setCalendarStartSelected] =
     React.useState(false);
   const [calendarEndSelected, setCalendarEndSelected] = React.useState(false);
@@ -20,7 +19,6 @@ const FilterNews = () => {
     label: "От новых к старым",
   });
 
-  const { type, from, to, page } = useAppSelector((state) => state.NewsReducer);
   const dispatch = useAppDispatch();
 
   const resetPosts = () => {
@@ -61,34 +59,36 @@ const FilterNews = () => {
   }, [selectedType, startDate, endDate]);
 
   return (
-    <div className="flex flex-row w-full h-16 items-center border-b-[1px] border-main-grey-600 text-main-grey-900 font-light text-sm mb-auto">
-      <Calendar
-        date={startDate}
-        handleDate={(date: Date) => {
-          resetPosts();
-          dispatch(NewsSlice.actions.update_from(date.getTime().toString()));
-          setStartDate(date);
-        }}
-        label="От:"
-        calendarSelected={calendarStartSelected}
-        setCalendarSelected={(selected) => {
-          setCalendarStartSelected(selected);
-        }}
-      />
-      <Calendar
-        date={endDate}
-        handleDate={(date: Date) => {
-          resetPosts();
-          dispatch(NewsSlice.actions.update_to(date.getTime().toString()));
-          setEndDate(date);
-        }}
-        label="До:"
-        calendarSelected={calendarEndSelected}
-        setCalendarSelected={(selected) => {
-          setCalendarEndSelected(selected);
-        }}
-      />
-      <div className="flex flex-row ml-auto items-center">
+    <div className="flex flex-col lg:flex-row w-full h-20 lg:h-16 items-center border-b-[1px] border-main-grey-600 text-main-grey-900 font-light text-sm mb-auto">
+      <div className="flex flex-row mt-4 lg:mt-0">
+        <Calendar
+          date={startDate}
+          handleDate={(date: Date) => {
+            resetPosts();
+            dispatch(NewsSlice.actions.update_from(date.getTime().toString()));
+            setStartDate(date);
+          }}
+          label="От:"
+          calendarSelected={calendarStartSelected}
+          setCalendarSelected={(selected) => {
+            setCalendarStartSelected(selected);
+          }}
+        />
+        <Calendar
+          date={endDate}
+          handleDate={(date: Date) => {
+            resetPosts();
+            dispatch(NewsSlice.actions.update_to(date.getTime().toString()));
+            setEndDate(date);
+          }}
+          label="До:"
+          calendarSelected={calendarEndSelected}
+          setCalendarSelected={(selected) => {
+            setCalendarEndSelected(selected);
+          }}
+        />
+      </div>
+      <div className="flex flex-row my-auto lg:ml-auto items-center">
         <div>Показывать:</div>
         <ReactSelect
           isSearchable={false}

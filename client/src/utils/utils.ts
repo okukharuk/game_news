@@ -1,9 +1,9 @@
 export const getFormattedOutput = (time: Number, type: "hour" | "minute") => {
-  if (time == 1) return type == "hour" ? " Час Назад" : " Минуту назад";
+  if (time === 1) return type === "hour" ? " Час Назад" : " Минуту назад";
   if (time >= 2 && time <= 4) {
-    return type == "hour" ? " Часа назад" : " Минуты назад";
+    return type === "hour" ? " Часа назад" : " Минуты назад";
   }
-  return type == "hour" ? " Часов назад" : " Минут назад";
+  return type === "hour" ? " Часов назад" : " Минут назад";
 };
 
 export const getFormattedTime = (time: string) => {

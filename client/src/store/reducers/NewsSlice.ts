@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { INewsQuery } from '../../models/INewsQuery';
+import { TSlug } from '../../models/TSlug';
 
 export const initialState: INewsQuery = {
+  slug: "counterstrike",
   type: "publishAtDesc",
   from: undefined,
   to: undefined,
@@ -13,6 +15,9 @@ export const NewsSlice = createSlice({
   name: "news",
   initialState,
   reducers: {
+    update_slug(state, action: PayloadAction<TSlug>) {
+      state.slug = action.payload;
+    },
     update_type(state, action: PayloadAction<string>) {
       state.type = action.payload;
     },
