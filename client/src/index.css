@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    
+    .main-gradient {
+      background: linear-gradient(to right, #011E3A, #1F5181);
+    }
+
+    .submain-gradient {
+      background: linear-gradient(to right, #012D57, #488ED1);
+    }
+
+    .main-url {
+      text-decoration: underline;
+      font-style: italic;
+      color: #2AABE2;
+    }
+}
+
+h3 {
+  font-weight: bolder;
+  font-style: italic;
+  color: #7C8FA0;
+  font-size: 1.25rem; 
+  line-height: 1.75rem; 
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
