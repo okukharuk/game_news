@@ -7,7 +7,7 @@ import { TSlug } from '../models/TSlug';
 
 export const newsAPI = createApi({
   reducerPath: "newsAPI",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080/api" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "/api" }),
   tagTypes: ["News"],
   endpoints: (build) => ({
     getNews: build.query<INewsLatest, INewsQuery>({

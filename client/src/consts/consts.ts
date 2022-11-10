@@ -10,4 +10,4 @@ export const SelectOptions: ISelect[] = [
   { type: "viewAsc", label: "Менее просматриваемые" },
 ];
 
-export const defaultURL = "http://localhost:8080/news";
+export const defaultURL = "/news";

@@ -64,10 +64,7 @@ const Post: React.FC<PostProps> = ({ postSlug, handleBackClick }) => {
             handleNewsClick={handleBackClick}
           />
           <div className="flex flex-row">
-            <img
-              src={"http://localhost:8080/news" + post?.article.image}
-              alt="article img"
-            />
+            <img src={"/news" + post?.article.image} alt="article img" />
             <div className="flex flex-col items-center w-full pl-8">
               <div className="underline cursor-pointer border-y-2 border-main-grey-700 w-full text-center py-2">
                 {post?.article.author.username}
