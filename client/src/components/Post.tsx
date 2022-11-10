@@ -48,11 +48,6 @@ const Post: React.FC<PostProps> = ({ postSlug, handleBackClick }) => {
     );
   };
 
-  React.useEffect(() => {
-    console.log(post);
-    console.log(error);
-  }, [post]);
-
   return (
     <div className="flex flex-col min-w-full h-fit shadow-xl bg-main-grey-400 lg:p-8 p-2 relative min-h-[50vh] mt-4">
       <div

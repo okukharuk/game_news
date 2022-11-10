@@ -8,7 +8,6 @@ const MoreButton = () => {
   const { page } = useAppSelector((state) => state.NewsReducer);
 
   const handleClick = () => {
-    console.log(page);
     if (page) dispatch(NewsSlice.actions.update_page(page + 1));
   };
 

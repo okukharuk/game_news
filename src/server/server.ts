@@ -1,3 +1,4 @@
+import * as dotenv from 'dotenv';
 import express from 'express';
 import { createProxyMiddleware, responseInterceptor } from 'http-proxy-middleware';
 
@@ -5,6 +6,8 @@ import { parseText } from '../utils/utils';
 
 export const startServer = () => {
   const app = express();
+  dotenv.config();
+  const port = process.env.PORT || 8080;
 
   app.use(
     "/api/page",
@@ -66,7 +69,7 @@ export const startServer = () => {
     })
   );
 
-  app.listen(8080, () => {
+  app.listen(port, () => {
     console.log("Server started");
   });
 };
