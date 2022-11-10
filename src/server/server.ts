@@ -1,6 +1,7 @@
 import * as dotenv from 'dotenv';
 import express from 'express';
 import { createProxyMiddleware, responseInterceptor } from 'http-proxy-middleware';
+import path from 'path';
 
 import { parseText } from '../utils/utils';
 
@@ -8,6 +9,8 @@ export const startServer = () => {
   const app = express();
   dotenv.config();
   const port = process.env.PORT || 8080;
+
+  app.use(express.static(path.join(__dirname, "../../client/build")));
 
   app.use(
     "/api/page",
@@ -29,7 +32,7 @@ export const startServer = () => {
             data.article
               ? (data.article.contentArr = data.article.contentArr.map(
                   (text: any) => {
-                    return parseText(text);
+                    return parseText(text).replace("/uploads", "/news/uploads");
                   }
                 ))
               : null;

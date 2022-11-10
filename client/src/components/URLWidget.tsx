@@ -25,16 +25,20 @@ const URLWidget: React.FC<URLWidgetProps> = ({ sourceHost }) => {
           Поделиться:
         </div>
         <div className="flex flex-row">
-          <img className="w-12" src={twitterSVG} alt="twitter" />
-          <img className="w-12" src={facebookSVG} alt="facebook" />
-          <img className="w-12" src={redditSVG} alt="reddit" />
+          <img className="w-12 cursor-pointer" src={twitterSVG} alt="twitter" />
+          <img
+            className="w-12 cursor-pointer"
+            src={facebookSVG}
+            alt="facebook"
+          />
+          <img className="w-12 cursor-pointer" src={redditSVG} alt="reddit" />
         </div>
       </div>
-      <div className="flex flex-row w-1/4">
+      <div className="flex flex-col lg:flex-row w-1/4 ml-auto">
         <div className="text-main-grey-200 font-bold italic text-base mt-auto">
           Копировать адрес ссылки
         </div>
-        <img className="w-12 mt-auto" src={linkSVG} alt="link" />
+        <img className="w-12 mt-auto cursor-pointer" src={linkSVG} alt="link" />
       </div>
     </div>
   );
